@@ -19,7 +19,7 @@ def resize_all_images_in_folder(folder_path, new_width, output_folder):
             output_path = resize_image(file_path, new_width, output_folder)
             print(f"Processed {file_path}, saved to {output_path}")
 
-        message_label.config(text=f"All {num_images} images resized and saved.", foreground="green")
+        message_label.config(text=f"{num_images} images resized and saved.", foreground="green")
         open_output_button.config(state=tk.NORMAL)  # Enable the button after resizing
     except Exception as e:
         message_label.config(text=f"Error: {e}", foreground="red")
