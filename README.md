@@ -21,25 +21,31 @@ This project is an ongoing effort, with plans to expand its capabilities over ti
 
 ## 2. Repository Structure
 
+- 📁 **'scripts'**: contains the main scripts for each functionality.
+
+Input / output folders to use as example:
+- 📁 **'ASCII'**: Contains the ASCII art outputs.
 - 📂 **'images'**: The directory where you import the images for processing.
 - 📁 **'images_resized'**: Contains the processed images, including resized versions and thumbnails.
-- 📁 **'ASCII'**: Contains the ASCII art outputs.
+
 
 ---
 
 ## 3. Files in the Main Directory
 
-I intend to expand this section as I refine the project and add more functionalities, such as incorporating the scripts into a `main.py`.
+I intend to expand this section as I refine the project and add more functionalities, such as incorporating more scripts into the `main.py`.
+- 🗝️ **'main.py'**: main program
+- 📄 **'README.md'**: This file, providing an overview of the project.
 
+Scripts:
 - 🖼️ **'ImageASCII.py'**: ASCII art generation script.
 - 📏 **'ImageResize.py'**: Image compressor and thumbnail generation script.
-- 📄 **'README.md'**: This file, providing an overview of the project.
 
 ---
 
 ## 4. Data Sources
 
-BulkPix does not require external data sources, but relies on the images you import into the 'Images' directory for processing. The processed results are saved back into the 'Outputs' directory.
+BulkPix does not require external data sources, but relies on the images you import into the 'Images' directory for processing. The processed results are saved back into the 'Outputs' directory. It is built using the PIL (Pillow) image processing library as well as Tinkr for the UI.
 
 ---
 
