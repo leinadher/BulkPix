@@ -51,7 +51,7 @@ def on_resize_button_click():
 
 # Create the main window
 root = tk.Tk()
-root.title("BulkPix - Image Resize")
+root.title("BulkPix - Bulk Image Resizer")
 # Set the window size (width x height)
 root.geometry("400x250")  # Adjust the size to accommodate the new button
 
@@ -78,7 +78,7 @@ width_entry.pack(padx=10, pady=5)
 resize_button = ttk.Button(root, text="Input folder", command=on_resize_button_click)
 resize_button.pack(padx=10, pady=10)
 
-open_output_button = ttk.Button(root, text="Output folder", command=open_output_directory, state=tk.DISABLED)
+open_output_button = ttk.Button(root, text="Open output folder", command=open_output_directory, state=tk.DISABLED)
 open_output_button.pack(padx=10, pady=10)
 
 # Label for displaying messages and instructions
