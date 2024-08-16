@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog, ttk
 from PIL import Image
 from scripts.ImageASCII import resize, desaturate, pixels_to_ASCII
-
+from apps.utils import main_menu, clear_window
 
 class ImageASCIIApp:
     def __init__(self, root):
@@ -28,6 +28,14 @@ class ImageASCIIApp:
         self.message_label = ttk.Label(self.root, text="Select an image and width to generate ASCII art.",
                                        wraplength=350)
         self.message_label.pack(pady=10)
+
+        # Add Back button
+        back_button = ttk.Button(self.root, text="Back", command=self.return_to_main_menu)
+        back_button.pack(pady=10)
+
+    def return_to_main_menu(self):
+        clear_window(self.root)
+        main_menu(self.root)
 
     def generate_ascii_art(self):
         new_width = self.width_var.get()

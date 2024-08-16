@@ -3,7 +3,7 @@ from tkinter import filedialog, ttk
 from scripts.ImageResize import resize_image
 import os
 import platform
-
+from apps.utils import main_menu, clear_window
 
 class ImageResizeApp:
     def __init__(self, root):
@@ -28,6 +28,14 @@ class ImageResizeApp:
                                        text="Enter new width in pixels and click 'Input folder' to select images.",
                                        wraplength=350)
         self.message_label.pack(pady=10)
+
+        # Add Back button
+        back_button = ttk.Button(self.root, text="Back", command=self.return_to_main_menu)
+        back_button.pack(pady=10)
+
+    def return_to_main_menu(self):
+        clear_window(self.root)
+        main_menu(self.root)
 
     def resize_all_images_in_folder(self, folder_path, new_width, output_folder):
         try:
