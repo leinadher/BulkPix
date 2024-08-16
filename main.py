@@ -1,41 +1,24 @@
 import tkinter as tk
 from tkinter import ttk
-import subprocess
-import importlib.util
-import os
-
-def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except AttributeError:
-        base_path = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
-# Function to dynamically load a module from a file path
-def load_module_from_file(module_name, file_path):
-    spec = importlib.util.spec_from_file_location(module_name, file_path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+from apps.ImageResize_app import ImageResizeApp
+from apps.ImageASCII_app import ImageASCIIApp
 
 def launch_image_ascii_app():
-    # Load and run ImageASCII_app.py from the apps folder
-    ascii_app_path = os.path.join(os.path.dirname(__file__), 'apps', 'ImageASCII_app.py')
-    ascii_app = load_module_from_file('ImageASCII_app', ascii_app_path)
-    # Start the ASCII Art Generator app
-    subprocess.Popen(["python", ascii_app_path])
+    clear_window()
+    ImageASCIIApp(root)
 
 def launch_image_resize_app():
-    # Load and run ImageResize_app.py from the apps folder
-    resize_app_path = os.path.join(os.path.dirname(__file__), 'apps', 'ImageResize_app.py')
-    resize_app = load_module_from_file('ImageResize_app', resize_app_path)
-    # Start the Image Resizer app
-    subprocess.Popen(["python", resize_app_path])
+    clear_window()
+    ImageResizeApp(root)
+
+def clear_window():
+    # Remove all widgets from the current window
+    for widget in root.winfo_children():
+        widget.destroy()
 
 # Create the main menu window
 root = tk.Tk()
-root.title("BulkPix - Menu")
+root.title("BulkPix")
 root.geometry("300x200")
 
 # Define the light theme colors
@@ -53,7 +36,7 @@ style.configure('TButton', background=button_bg, foreground=button_fg, relief="f
 style.configure('TLabel', background=bg_color, foreground=fg_color)
 
 # Create and place widgets
-ttk.Label(root, text="Select an application:", font=("Arial", 11)).pack(pady=20)
+ttk.Label(root, text="Choose an application:", font=("Arial", 11)).pack(pady=20)
 
 # Create frame to hold the buttons and emojis
 button_frame = tk.Frame(root, bg=bg_color)
