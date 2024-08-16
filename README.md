@@ -1,6 +1,6 @@
 ---
 Daniel Herrera  
-16.08.2024
+16/08/2024
 ---
 
 # 📸 BulkPix - Image Bulk Processing
