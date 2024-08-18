@@ -13,6 +13,11 @@ def clear_window(root):
 # Executes the main menu
 def main_menu(root):
     """Function to display the main menu."""
+
+    # Set the window icon
+    img = tk.PhotoImage(file='assets/icon.png')
+    root.iconphoto(False, img)
+
     ttk.Label(root, text="Select an application:", font=("Arial", 11)).pack(pady=20)
 
     # Frame that contains the buttons / widgets
