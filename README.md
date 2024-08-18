@@ -22,13 +22,8 @@ This project is an ongoing effort, with plans to expand its capabilities over ti
 ## 2. Repository Structure
 
 - 📁 **'apps'**: contains the sub-apps that are launched by `main.py` for each functionality.
+- 📁 **'assets'**: contains additional assets, icons, etc.
 - 📁 **'scripts'**: contains the main functions and methods for each functionality.
-
-Input / output folders to use as example:
-- 📁 **'ASCII'**: Contains ASCII art outputs.
-- 📂 **'images'**: The directory where you import the images for processing.
-- 📁 **'images_resized'**: Contains the processed images, including resized versions and thumbnails.
-
 
 ---
 
