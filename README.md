@@ -3,13 +3,13 @@ Daniel Herrera
 16/08/2024
 ---
 
-# 📸 BulkPix - Image Bulk Processing
+# 📸 BulkPix - Bulk Image Processing
 
 ---
 
 ## 1. Project Overview
 
-**BulkPix** is a personal tool developed for managing and processing large collections of images captured with my DSLR camera. Designed with flexibility in mind, it provides a range of functionalities, including:
+**BulkPix** is a personal tool developed for processing large collections of images captured with my DSLR camera. Designed with flexibility in mind, it provides a range of functionalities, including:
 
 - 🖼️ **Thumbnail Creation**: Automatically generate thumbnails for large batches of images.
 - 📏 **Image Resizing**: Resize images to various dimensions for different use cases.
