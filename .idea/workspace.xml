@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b1a2323a-8f27-4f67-b6a1-dabb13b8c0c7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ImageASCII_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ImageASCII_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/ImageResize_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/ImageResize_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/ImageASCII.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ImageASCII.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +29,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2kkCN6SPft1w4ot5UGsjBXcc0Gs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,7 +40,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.ImageASCII_app.executor": "Run",
+    "Python.ImageResize_app.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.utils.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -68,7 +72,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723818144850</updated>
-      <workItem from="1723818145910" duration="2805000" />
+      <workItem from="1723818145910" duration="3525000" />
+      <workItem from="1723883269560" duration="1427000" />
+      <workItem from="1723973291348" duration="2864000" />
     </task>
     <servers />
   </component>
@@ -88,6 +94,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BulkPix$ImageASCII_app.coverage" NAME="ImageASCII_app Coverage Results" MODIFIED="1723818244865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps" />
-    <SUITE FILE_PATH="coverage/BulkPix$main.coverage" NAME="main Coverage Results" MODIFIED="1723825367543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BulkPix$ImageResize_app.coverage" NAME="ImageResize_app Coverage Results" MODIFIED="1723975105616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps" />
+    <SUITE FILE_PATH="coverage/BulkPix$utils.coverage" NAME="utils Coverage Results" MODIFIED="1723976817287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apps" />
+    <SUITE FILE_PATH="coverage/BulkPix$main.coverage" NAME="main Coverage Results" MODIFIED="1723977303299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

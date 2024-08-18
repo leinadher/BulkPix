@@ -5,6 +5,8 @@ import os
 import platform
 from apps.utils import main_menu, clear_window
 
+# Script that integrates ImageResize into a Tinkr app, built into a class
+
 class ImageResizeApp:
     def __init__(self, root):
         self.root = root
@@ -14,22 +16,26 @@ class ImageResizeApp:
     def setup_widgets(self):
         ttk.Label(self.root, text="New width in pixels:").pack(padx=10, pady=5)
 
+        # Text entry box
         self.width_entry = tk.Entry(self.root, background="#FFFFFF", foreground="#000000")
         self.width_entry.pack(padx=10, pady=5)
 
+        # Input folder button
         resize_button = ttk.Button(self.root, text="Input folder", command=self.on_resize_button_click)
         resize_button.pack(padx=10, pady=10)
 
+        # Output folder button
         self.open_output_button = ttk.Button(self.root, text="Open output folder", command=self.open_output_directory,
                                              state=tk.DISABLED)
         self.open_output_button.pack(padx=10, pady=10)
 
+        # Info label
         self.message_label = ttk.Label(self.root,
                                        text="Enter new width in pixels and click 'Input folder' to select images.",
                                        wraplength=350)
         self.message_label.pack(pady=10)
 
-        # Add Back button
+        # Back button
         back_button = ttk.Button(self.root, text="Back", command=self.return_to_main_menu)
         back_button.pack(pady=10)
 

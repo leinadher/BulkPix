@@ -4,6 +4,8 @@ from PIL import Image
 from scripts.ImageASCII import resize, desaturate, pixels_to_ASCII
 from apps.utils import main_menu, clear_window
 
+# Script that integrates ImageASCII into a Tinkr app, built into a class
+
 class ImageASCIIApp:
     def __init__(self, root):
         self.root = root

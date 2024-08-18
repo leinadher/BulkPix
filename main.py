@@ -6,9 +6,6 @@ root = tk.Tk()
 root.title("BulkPix")
 root.geometry("420x240")
 
-# Apply light theme
-root.configure(bg="#F0F0F0")
-
 # Start the main menu
 main_menu(root)
 
