@@ -9,7 +9,8 @@ from apps.utils import main_menu, clear_window
 class ImageMetadataApp:
     def __init__(self, root):
         self.root = root
-        self.metadata_output_folder = None
+        self.metadata_output_file = None
+        self.folder_path = None
         self.setup_widgets()
 
     def setup_widgets(self):
@@ -18,15 +19,10 @@ class ImageMetadataApp:
                                                command=self.on_select_folder_button_click)
         self.select_folder_button.pack(padx=10, pady=10)
 
-        # Output folder button
-        self.select_output_button = ttk.Button(self.root, text="Output folder",
-                                               command=self.on_select_output_button_click)
+        # Output CSV button (Initially disabled)
+        self.select_output_button = ttk.Button(self.root, text="Output CSV",
+                                               command=self.on_select_output_button_click, state=tk.DISABLED)
         self.select_output_button.pack(padx=10, pady=10)
-
-        # Extract metadata button
-        self.extract_metadata_button = ttk.Button(self.root, text="Create CSV",
-                                                  command=self.on_extract_metadata_button_click, state=tk.DISABLED)
-        self.extract_metadata_button.pack(padx=10, pady=10)
 
         # Open output directory button
         self.open_output_directory_button = ttk.Button(self.root, text="Open output folder",
@@ -35,7 +31,7 @@ class ImageMetadataApp:
 
         # Info label
         self.message_label = ttk.Label(self.root,
-                                       text="Select input folder with images and save CSV with metadata.",
+                                       text="Select input folder with images and choose CSV output file.",
                                        wraplength=350)
         self.message_label.pack(pady=10)
 
@@ -50,16 +46,23 @@ class ImageMetadataApp:
     def on_select_folder_button_click(self):
         self.folder_path = filedialog.askdirectory(title="Select Folder with Images")
         if self.folder_path:
-            self.check_ready_to_extract()
+            self.select_output_button.config(state=tk.NORMAL)  # Enable the Output CSV button
+            self.try_extract_metadata()
 
     def on_select_output_button_click(self):
-        self.metadata_output_folder = filedialog.askdirectory(title="Select Metadata Output Folder")
-        if self.metadata_output_folder:
-            self.check_ready_to_extract()
+        # Ask the user to choose the output CSV file
+        self.metadata_output_file = filedialog.asksaveasfilename(
+            title="Select Output CSV File",
+            defaultextension=".csv",
+            filetypes=[("CSV files", "*.csv")],
+            initialfile="metadata.csv"
+        )
+        if self.metadata_output_file:
+            self.try_extract_metadata()
 
-    def check_ready_to_extract(self):
-        if hasattr(self, 'folder_path') and self.metadata_output_folder:
-            self.extract_metadata_button.config(state=tk.NORMAL)
+    def try_extract_metadata(self):
+        if self.folder_path and self.metadata_output_file:
+            self.extract_metadata_from_folder()
 
     def extract_metadata_from_folder(self):
         try:
@@ -72,24 +75,23 @@ class ImageMetadataApp:
                 return
 
             # If valid images are found, proceed with metadata extraction
-            extract_metadata(self.folder_path, self.metadata_output_folder)
+            extract_metadata(self.folder_path, os.path.dirname(self.metadata_output_file),
+                             os.path.basename(self.metadata_output_file))
             self.message_label.config(text="Metadata extraction completed.", foreground="green")
             self.open_output_directory_button.config(state=tk.NORMAL)  # Enable button to open folder
         except Exception as e:
             self.message_label.config(text=f"Error: {e}", foreground="red")
 
     def open_metadata_output_directory(self):
-        if self.metadata_output_folder:
+        if self.metadata_output_file:
             try:
+                output_dir = os.path.dirname(self.metadata_output_file)
                 if platform.system() == "Windows":
-                    os.startfile(self.metadata_output_folder)  # Windows
+                    os.startfile(output_dir)  # Windows
                 elif platform.system() == "Darwin":
-                    os.system(f'open "{self.metadata_output_folder}"')  # macOS
+                    os.system(f'open "{output_dir}"')  # macOS
                 elif platform.system() == "Linux":
-                    os.system(f'xdg-open "{self.metadata_output_folder}"')  # Linux
+                    os.system(f'xdg-open "{output_dir}"')  # Linux
             except Exception as e:
                 self.message_label.config(text=f"Error opening folder: {e}", foreground="red")
 
-    def on_extract_metadata_button_click(self):
-        if hasattr(self, 'folder_path') and self.metadata_output_folder:
-            self.extract_metadata_from_folder()
