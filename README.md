@@ -26,8 +26,8 @@ This project is an ongoing effort, with plans to expand its capabilities over ti
 ## 3. Files in the Main Directory
 
 I intend to expand this section as I refine the project and add more functionalities, such as incorporating more scripts into the `main.py`.
-- 🗝️ **'main.py'**: main program, launches a menu that leads to the sub-apps.
-- 📄 **'README.md'**: This file, providing an overview of the project.
+- 🗝️ **`main.py`**: main program, launches a menu that leads to the sub-apps.
+- 📄 **`README.md`**: This file, providing an overview of the project.
 
 ## 4. Data Sources
 
