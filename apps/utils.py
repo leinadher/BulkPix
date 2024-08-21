@@ -31,22 +31,29 @@ def main_menu(root):
     resize_emoji = tk.Label(button_frame, text="🔄", font=("Arial", 18), bg="#F0F0F0")
     resize_emoji.grid(row=0, column=0, sticky='w', padx=(0, 10), pady=5)
 
+    # Bulk Image Metadata Extractor
+    resize_button = ttk.Button(button_frame, text="Bulk Image Metadata Extractor", command=lambda: launch_image_metadata_app(root))
+    resize_button.grid(row=1, column=1, sticky='w', padx=(0, 10), pady=5)
+
+    resize_emoji = tk.Label(button_frame, text="🏷️", font=("Arial", 18), bg="#F0F0F0")
+    resize_emoji.grid(row=1, column=0, sticky='w', padx=(0, 10), pady=5)
+
     # ASCII Art Generator button
     ascii_button = ttk.Button(button_frame, text="ASCII Art Generator", command=lambda: launch_image_ascii_app(root))
-    ascii_button.grid(row=1, column=1, sticky='w', padx=(0, 10), pady=5)
+    ascii_button.grid(row=2, column=1, sticky='w', padx=(0, 10), pady=5)
 
     ascii_emoji = tk.Label(button_frame, text="🎨", font=("Arial", 18), bg="#F0F0F0")
-    ascii_emoji.grid(row=1, column=0, sticky='w', padx=(0, 10), pady=5)
+    ascii_emoji.grid(row=2, column=0, sticky='w', padx=(0, 10), pady=5)
 
     # GitHub link
     def open_github():
         webbrowser.open("https://github.com/leinadher/BulkPix")
 
     github_button = ttk.Button(button_frame, text="GitHub Project", command=open_github)
-    github_button.grid(row=2, column=1, sticky='w', padx=(0, 10), pady=5)
+    github_button.grid(row=3, column=1, sticky='w', padx=(0, 10), pady=5)
 
     github_emoji = tk.Label(button_frame, text="🛠️", font=("Arial", 18), bg="#F0F0F0")
-    github_emoji.grid(row=2, column=0, sticky='w', padx=(0, 10), pady=5)
+    github_emoji.grid(row=3, column=0, sticky='w', padx=(0, 10), pady=5)
 
 
 # Sub-app launch functions
@@ -54,6 +61,11 @@ def launch_image_resize_app(root):
     from apps.ImageResize_app import ImageResizeApp
     clear_window(root)
     ImageResizeApp(root)
+
+def launch_image_metadata_app(root):
+    from apps.ImageMetadata_app import ImageMetadataApp
+    clear_window(root)
+    ImageMetadataApp(root)
 
 def launch_image_ascii_app(root):
     from apps.ImageASCII_app import ImageASCIIApp
