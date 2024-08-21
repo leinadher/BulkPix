@@ -21,7 +21,7 @@ This project is an ongoing effort, with plans to expand its capabilities over ti
 
 - 📁 **'apps'**: contains the sub-apps that are launched by `main.py` for each functionality.
 - 📁 **'assets'**: contains additional assets, icons, etc.
-- 📁 **'scripts'**: contains the main functions and methods for each functionality.
+- 📁 **'scripts'**: contains the classes and functions for each feature.
 
 ## 3. Files in the Main Directory
 
