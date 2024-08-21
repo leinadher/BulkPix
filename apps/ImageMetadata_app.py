@@ -19,7 +19,7 @@ class ImageMetadataApp:
         self.select_folder_button.pack(padx=10, pady=10)
 
         # Output folder button
-        self.select_output_button = ttk.Button(self.root, text="Save as CSV", command=self.on_select_output_button_click)
+        self.select_output_button = ttk.Button(self.root, text="Output folder", command=self.on_select_output_button_click)
         self.select_output_button.pack(padx=10, pady=10)
 
         # Info label
@@ -29,7 +29,7 @@ class ImageMetadataApp:
         self.message_label.pack(pady=10)
 
         # Extract metadata button
-        self.extract_metadata_button = ttk.Button(self.root, text="Extract Metadata", command=self.on_extract_metadata_button_click, state=tk.DISABLED)
+        self.extract_metadata_button = ttk.Button(self.root, text="Create CSV", command=self.on_extract_metadata_button_click, state=tk.DISABLED)
         self.extract_metadata_button.pack(padx=10, pady=10)
 
         # Open output directory button
