@@ -19,14 +19,14 @@ This project is an ongoing effort, with plans to expand its capabilities over ti
 
 ## 2. Repository Structure
 
-- 📁 **'apps'**: contains the sub-apps that are launched by `main.py` for each functionality.
-- 📁 **'assets'**: contains additional assets, icons, etc.
-- 📁 **'scripts'**: contains the classes and functions for each feature.
+- 📁 **'apps'**: Contains the sub-apps that are launched by `main.py` for each functionality.
+- 📁 **'assets'**: Contains additional assets, icons, etc.
+- 📁 **'scripts'**: Contains the classes and functions for each feature.
 
 ## 3. Files in the Main Directory
 
 I intend to expand this section as I refine the project and add more functionalities, such as incorporating more scripts into the `main.py`.
-- 🗝️ **`main.py`**: main program, launches a menu that leads to the sub-apps.
+- 🗝️ **`main.py`**: Main program, launches a menu that leads to the sub-apps.
 - 📄 **`README.md`**: This file, providing an overview of the project.
 
 ## 4. Data Sources
