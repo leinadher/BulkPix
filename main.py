@@ -4,7 +4,7 @@ from apps.utils import main_menu, clear_window
 # Create the main menu window
 root = tk.Tk()
 root.title("BulkPix")
-root.geometry("420x280")
+root.geometry("420x340")
 
 # Start the main menu
 main_menu(root)

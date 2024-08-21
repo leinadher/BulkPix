@@ -10,6 +10,7 @@ from apps.utils import main_menu, clear_window
 class ImageResizeApp:
     def __init__(self, root):
         self.root = root
+        self.folder_path = None
         self.output_folder = None
         self.setup_widgets()
 
@@ -21,17 +22,24 @@ class ImageResizeApp:
         self.width_entry.pack(padx=10, pady=5)
 
         # Input folder button
-        resize_button = ttk.Button(self.root, text="Input folder", command=self.on_resize_button_click)
-        resize_button.pack(padx=10, pady=10)
+        self.input_folder_button = ttk.Button(self.root, text="Input folder", command=self.on_select_input_folder_button_click)
+        self.input_folder_button.pack(padx=10, pady=10)
 
         # Output folder button
-        self.open_output_button = ttk.Button(self.root, text="Open output folder", command=self.open_output_directory,
-                                             state=tk.DISABLED)
+        self.output_folder_button = ttk.Button(self.root, text="Output folder", command=self.on_select_output_folder_button_click, state=tk.DISABLED)
+        self.output_folder_button.pack(padx=10, pady=10)
+
+        # Resize images button
+        self.resize_button = ttk.Button(self.root, text="Resize Images", command=self.on_resize_button_click, state=tk.DISABLED)
+        self.resize_button.pack(padx=10, pady=10)
+
+        # Open output folder button
+        self.open_output_button = ttk.Button(self.root, text="Open output folder", command=self.open_output_directory, state=tk.DISABLED)
         self.open_output_button.pack(padx=10, pady=10)
 
         # Info label
         self.message_label = ttk.Label(self.root,
-                                       text="Enter new width in pixels and click 'Input folder' to select images.",
+                                       text="Enter new width in pixels and select input/output folders.",
                                        wraplength=350)
         self.message_label.pack(pady=10)
 
@@ -42,6 +50,16 @@ class ImageResizeApp:
     def return_to_main_menu(self):
         clear_window(self.root)
         main_menu(self.root)
+
+    def on_select_input_folder_button_click(self):
+        self.folder_path = filedialog.askdirectory(title="Select Folder with Images")
+        if self.folder_path:
+            self.output_folder_button.config(state=tk.NORMAL)  # Enable output folder button
+
+    def on_select_output_folder_button_click(self):
+        self.output_folder = filedialog.askdirectory(title="Select Output Folder")
+        if self.output_folder:
+            self.resize_button.config(state=tk.NORMAL)  # Enable resize images button
 
     def resize_all_images_in_folder(self, folder_path, new_width, output_folder):
         try:
@@ -82,8 +100,5 @@ class ImageResizeApp:
             return
 
         new_width = int(new_width)
-        folder_path = filedialog.askdirectory(title="Select Folder with Images")
-        if folder_path:
-            self.output_folder = filedialog.askdirectory(title="Select Output Folder")
-            if self.output_folder:
-                self.resize_all_images_in_folder(folder_path, new_width, self.output_folder)
+        if self.folder_path and self.output_folder:
+            self.resize_all_images_in_folder(self.folder_path, new_width, self.output_folder)

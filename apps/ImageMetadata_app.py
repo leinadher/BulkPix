@@ -5,7 +5,6 @@ import os
 import platform
 from apps.utils import main_menu, clear_window
 
-# Script that integrates ImageMetadata into a Tinkr app, built into a class
 
 class ImageMetadataApp:
     def __init__(self, root):
@@ -15,26 +14,30 @@ class ImageMetadataApp:
 
     def setup_widgets(self):
         # Input folder button
-        self.select_folder_button = ttk.Button(self.root, text="Input folder", command=self.on_select_folder_button_click)
+        self.select_folder_button = ttk.Button(self.root, text="Input folder",
+                                               command=self.on_select_folder_button_click)
         self.select_folder_button.pack(padx=10, pady=10)
 
         # Output folder button
-        self.select_output_button = ttk.Button(self.root, text="Output folder", command=self.on_select_output_button_click)
+        self.select_output_button = ttk.Button(self.root, text="Output folder",
+                                               command=self.on_select_output_button_click)
         self.select_output_button.pack(padx=10, pady=10)
+
+        # Extract metadata button
+        self.extract_metadata_button = ttk.Button(self.root, text="Create CSV",
+                                                  command=self.on_extract_metadata_button_click, state=tk.DISABLED)
+        self.extract_metadata_button.pack(padx=10, pady=10)
+
+        # Open output directory button
+        self.open_output_directory_button = ttk.Button(self.root, text="Open output folder",
+                                                       command=self.open_metadata_output_directory, state=tk.DISABLED)
+        self.open_output_directory_button.pack(padx=10, pady=10)
 
         # Info label
         self.message_label = ttk.Label(self.root,
                                        text="Select input folder with images and save CSV with metadata.",
                                        wraplength=350)
         self.message_label.pack(pady=10)
-
-        # Extract metadata button
-        self.extract_metadata_button = ttk.Button(self.root, text="Create CSV", command=self.on_extract_metadata_button_click, state=tk.DISABLED)
-        self.extract_metadata_button.pack(padx=10, pady=10)
-
-        # Open output directory button
-        self.open_output_directory_button = ttk.Button(self.root, text="Open output folder", command=self.open_metadata_output_directory, state=tk.DISABLED)
-        self.open_output_directory_button.pack(padx=10, pady=10)
 
         # Back button
         back_button = ttk.Button(self.root, text="Back", command=self.return_to_main_menu)
@@ -60,6 +63,15 @@ class ImageMetadataApp:
 
     def extract_metadata_from_folder(self):
         try:
+            # Check for valid images
+            valid_images = [file for file in os.listdir(self.folder_path) if
+                            file.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif'))]
+
+            if not valid_images:
+                self.message_label.config(text="Error: No valid photos found in the selected folder.", foreground="red")
+                return
+
+            # If valid images are found, proceed with metadata extraction
             extract_metadata(self.folder_path, self.metadata_output_folder)
             self.message_label.config(text="Metadata extraction completed.", foreground="green")
             self.open_output_directory_button.config(state=tk.NORMAL)  # Enable button to open folder
