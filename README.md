@@ -12,6 +12,7 @@
 
 - 🖼️ **Thumbnail Creation**: Automatically generate thumbnails for large batches of images.
 - 📏 **Image Resizing**: Resize images to various dimensions for different use cases.
+- 🏷️ **Image Metadata Extractor**: Extract the metadata from photos stored in a directory and save into a CSV file.
 - 🎨 **ASCII Art Generation**: Convert images into ASCII art for creative applications.
 
 This project is an ongoing effort, with plans to expand its capabilities over time. Future enhancements will include additional processing features and a user interface to make it more user-friendly.
