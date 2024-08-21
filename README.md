@@ -1,9 +1,8 @@
----
-Daniel Herrera  
-16/08/2024
----
-
 # 📸 BulkPix - Bulk Image Processing
+
+**Author:** Daniel Herrera
+
+**Date:** 16/08/2024
 
 ---
 
@@ -17,15 +16,11 @@ Daniel Herrera
 
 This project is an ongoing effort, with plans to expand its capabilities over time. Future enhancements will include additional processing features and a user interface to make it more user-friendly.
 
----
-
 ## 2. Repository Structure
 
 - 📁 **'apps'**: contains the sub-apps that are launched by `main.py` for each functionality.
 - 📁 **'assets'**: contains additional assets, icons, etc.
 - 📁 **'scripts'**: contains the main functions and methods for each functionality.
-
----
 
 ## 3. Files in the Main Directory
 
@@ -33,12 +28,8 @@ I intend to expand this section as I refine the project and add more functionali
 - 🗝️ **'main.py'**: main program, launches a menu that leads to the sub-apps.
 - 📄 **'README.md'**: This file, providing an overview of the project.
 
----
-
 ## 4. Data Sources
 
 BulkPix does not require external data sources, but relies on the images you import into the 'Images' directory for processing. The processed results are saved back into the 'Outputs' directory. It is built using the PIL (Pillow) image processing library as well as Tinkr for the UI.
-
----
 
 Feel free to expand the project by adding more features or improving the interface as your needs evolve! 🚀
