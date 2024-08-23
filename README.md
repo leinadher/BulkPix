@@ -4,6 +4,8 @@
 
 **Date:** 16/08/2024
 
+![Screenshot](assets/screenshot.jpg)
+
 ---
 
 ## 1. Project Overview
