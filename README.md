@@ -4,7 +4,7 @@
 
 **Date:** 16/08/2024
 
-<img src="assets/screenshot.jpg" alt="Screenshot" width="300"/>
+<img src="assets/screenshot.jpg" alt="Screenshot" width="512"/>
 
 ---
 
