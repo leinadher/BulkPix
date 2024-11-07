@@ -33,6 +33,6 @@ I intend to expand this section as I refine the project and add more functionali
 
 ## 4. Data Sources
 
-BulkPix does not require external data sources, but relies on the images you import into the 'Images' directory for processing. The processed results are saved back into the 'Outputs' directory. It is built using the PIL (Pillow) image processing library as well as Tinkr for the UI.
+BulkPix does not require external data sources, other than the images imported for transorming. It is built using the PIL (Pillow) image processing library as well as Tinkr for the UI.
 
 Feel free to expand the project by adding more features or improving the interface as your needs evolve! 🚀
